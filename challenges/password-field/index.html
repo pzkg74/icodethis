@@ -7,6 +7,8 @@
 
     <link rel="stylesheet" href="./styles.css" />
 
+    <script defer src="./script.js"></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -33,23 +35,22 @@
       <form>
         <label for="password">Password</label>
 
-        <div>
-          <div>
+        <div id="password-container">
+          <div id="password-input-container">
             <img
               height="50px"
               src="https://www.svgrepo.com/show/491292/padlock.svg"
               alt="padlock"
             />
-            <input type="text" id="password" />
+            <input type="password" id="password" />
           </div>
 
-          <button>
+          <button id="eye">
             <img
               height="50px"
-              src="https://www.svgrepo.com/show/535373/eye.svg"
+              src="https://www.svgrepo.com/show/535376/eye-slash.svg"
               alt="open eye"
             />
-            <!-- https://www.svgrepo.com/show/535376/eye-slash.svg -->
           </button>
         </div>
 
@@ -59,7 +60,7 @@
         <button>Continue</button>
 
         <br />
-        <a href="">Reset password</a>
+        <a href="/">Reset password</a>
       </form>
     </main>
   </body>

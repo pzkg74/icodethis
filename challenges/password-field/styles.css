@@ -42,3 +42,37 @@ h1 {
     font-size: 1.2rem;
   }
 }
+
+#password-input-container {
+  border: 2px solid black;
+  border-radius: 10px;
+  display: flex;
+  /* align-items: center; */
+  padding: 10px;
+  flex-grow: 1;
+}
+
+#password-container {
+  display: flex;
+  gap: 20px;
+}
+
+#password {
+  margin-left: 5px;
+  border: 0;
+  height: 100%;
+  font-size: 2rem;
+}
+
+#password:focus {
+  outline: 0;
+}
+
+#password-container button {
+  background-color: transparent;
+  border: 0;
+
+  & :hover {
+    cursor: pointer;
+  }
+}
