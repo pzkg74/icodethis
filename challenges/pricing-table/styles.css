@@ -11,7 +11,7 @@ main {
   padding: 10px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
   #container {
     flex-direction: column;
   }
@@ -61,24 +61,37 @@ main {
     }
 
     & button {
+      font-family: inherit;
       margin-top: auto;
       padding: 20px;
-      width: fit-content;
+      width: 170px;
+      font-size: 1.2rem;
       white-space: nowrap;
       border: 0;
       border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 4px 4px 5px lightgrey;
+      background-color: var(--button-color);
+      transition:
+        box-shadow 0.6s,
+        transform 0.6s;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 4px 8px 15px lightgrey;
+      }
     }
   }
 }
 
 #container div:nth-child(1) button {
-  background-color: hsl(284, 100%, 87%);
+  --button-color: hsl(284, 100%, 87%);
 }
 
 #container div:nth-child(2) button {
-  background-color: hsl(183, 78%, 82%);
+  --button-color: hsl(183, 78%, 82%);
 }
 
 #container div:nth-child(3) button {
-  background-color: hsl(32, 100%, 86%);
+  --button-color: hsl(32, 100%, 86%);
 }
