@@ -12,6 +12,7 @@ body {
 
 main {
   background-color: lightblue;
+  margin: 0 20px;
   width: 500px;
   aspect-ratio: 1;
   border-radius: 50%;
@@ -19,12 +20,11 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: -2;
 
+  /* the reason center and pin are two different things is because I created center first, got the positioning of the hands right and then tried to put the center on top, tldr: i couldn't be bothered to redo everything so there's one more element that just sits on top, i.e. center = hands positioning, pin = the black circle (i.e. center if you could see it) im rambling <3 */
   & #center {
     position: relative;
-    background-color: black;
-    --center-width: 20px;
+    --center-width: 25px;
     width: var(--center-width);
     aspect-ratio: 1;
     border-radius: 50%;
@@ -34,14 +34,46 @@ main {
       --hand-width: 10px;
       width: var(--hand-width);
       height: 220px;
-      border-radius: 10px;
+      border-radius: 10px 10px 0 0;
       background-color: red;
-      bottom: 10px;
       left: calc((var(--center-width) / 2) - (var(--hand-width) / 2));
-      /* transform: rotate(90deg); */
-      transform-origin: bottom;
-      border: 1px solid white;
-      z-index: -1;
+      bottom: calc((var(--center-width) / 2));
+      transform-origin: center bottom;
+    }
+
+    & #minutes {
+      position: absolute;
+      --hand-width: 15px;
+      width: var(--hand-width);
+      height: 200px;
+      border-radius: 10px 10px 0 0;
+      background-color: black;
+      left: calc((var(--center-width) / 2) - (var(--hand-width) / 2));
+      bottom: calc((var(--center-width) / 2));
+      transform-origin: center bottom;
+      outline: 3px solid lightblue;
+    }
+
+    & #hours {
+      position: absolute;
+      --hand-width: 22px;
+      width: var(--hand-width);
+      height: 150px;
+      border-radius: 10px 10px 0 0;
+      background-color: black;
+      left: calc((var(--center-width) / 2) - (var(--hand-width) / 2));
+      bottom: calc((var(--center-width) / 2));
+      transform-origin: center bottom;
+      outline: 3px solid lightblue;
+    }
+
+    & #pin {
+      position: relative;
+      background-color: black;
+      outline: 3px solid lightblue;
+      width: var(--center-width);
+      aspect-ratio: 1;
+      border-radius: 50%;
     }
   }
 }
