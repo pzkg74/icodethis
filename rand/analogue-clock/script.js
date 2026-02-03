@@ -23,12 +23,12 @@ setInterval(() => {
   time.second += 1;
   secondHand.style.transform = `rotate(${time.second / SECONDS_IN_MINUTE}turn)`;
 
-  if (time.second === 60) {
+  if (time.second === SECONDS_IN_MINUTE) {
     time.second = 0;
     time.minute += 1;
     minuteHand.style.transform = `rotate(${time.minute / MINUTES_IN_HOUR}turn)`;
 
-    if (time.minute === 60) {
+    if (time.minute === MINUTES_IN_HOUR) {
       time.minute = 0;
       time.hour += 1;
       hourHand.style.transform = `rotate(${(time.hour % 12) / HOURS_ON_CLOCK}turn)`;
