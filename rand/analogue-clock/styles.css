@@ -1,9 +1,12 @@
 * {
   box-sizing: border-box;
+  font-family: Courier, Arial;
 }
 
 body {
   display: flex;
+  gap: 50px;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -20,8 +23,14 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 
-  /* the reason center and pin are two different things is because I created center first, got the positioning of the hands right and then tried to put the center on top, tldr: i couldn't be bothered to redo everything so there's one more element that just sits on top, i.e. center = hands positioning, pin = the black circle (i.e. center if you could see it) im rambling <3 */
+  /* the reason center and pin are two different things is because I created center first, got the positioning of the hands right and then tried to put the center on top, tldr: i couldn't be bothered to redo everything so there's one more element that just 
+  sits on top, i.e. center = hands positioning, pin = the black circle (i.e. center if you could see it) im rambling <3 */
+  #pin {
+    z-index: 4;
+  }
+
   & #center {
     position: relative;
     --center-width: 25px;
@@ -40,6 +49,9 @@ main {
       bottom: calc((var(--center-width) / 2));
       transform-origin: center bottom;
       transform: rotate(var(--rotation, 0turn));
+      outline: 3px solid lightblue;
+
+      z-index: 1;
     }
 
     & #minutes {
@@ -54,6 +66,7 @@ main {
       transform-origin: center bottom;
       transform: rotate(var(--rotation, 0turn));
       outline: 3px solid lightblue;
+      z-index: 2;
     }
 
     & #hours {
@@ -68,6 +81,7 @@ main {
       transform-origin: center bottom;
       transform: rotate(var(--rotation, 0turn));
       outline: 3px solid lightblue;
+      z-index: 3;
     }
 
     & #pin {
@@ -78,5 +92,53 @@ main {
       aspect-ratio: 1;
       border-radius: 50%;
     }
+  }
+
+  & .marker div {
+    position: absolute;
+    top: 0;
+    left: calc(50% - calc(var(--marker-width) / 2));
+    --marker-width: 7px;
+    width: var(--marker-width);
+    height: 50%;
+    aspect-ratio: 1;
+    transform-origin: bottom;
+    /* background-color: yellow; */
+
+    & .tip {
+      background-color: black;
+      transform: none;
+      height: 30px;
+      margin-top: 10px;
+      position: relative;
+      left: 0;
+      border-radius: 10px;
+    }
+  }
+}
+
+.marker > div {
+  transform: rotate(calc((1turn / sibling-count()) * sibling-index()));
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 1.5rem;
+  width: 340px;
+}
+
+input {
+  margin: 0;
+  font-size: inherit;
+}
+
+@supports not (
+  transform: rotate(calc((1turn / sibling-count()) * sibling-index()))
+) {
+  .marker,
+  form {
+    display: none;
   }
 }

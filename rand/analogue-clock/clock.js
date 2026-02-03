@@ -1,8 +1,6 @@
 const SECOND_IN_MS = 1000;
-
 const SECONDS_IN_MINUTE = 60;
 const MINUTES_IN_HOUR = 60;
-
 const SECONDS_IN_HOUR = 60 * 60;
 const HOURS_ON_CLOCK = 12;
 
@@ -48,6 +46,6 @@ setInterval(() => {
     }
   }
 
-  console.clear();
-  console.log(`${time.hour}:${time.minute}:${time.second}`);
+  // console.clear();
+  // console.log(`${time.hour}:${time.minute}:${time.second}`);
 }, SECOND_IN_MS);
