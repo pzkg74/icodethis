@@ -39,6 +39,7 @@ main {
       left: calc((var(--center-width) / 2) - (var(--hand-width) / 2));
       bottom: calc((var(--center-width) / 2));
       transform-origin: center bottom;
+      transform: rotate(var(--rotation, 0turn));
     }
 
     & #minutes {
@@ -51,6 +52,7 @@ main {
       left: calc((var(--center-width) / 2) - (var(--hand-width) / 2));
       bottom: calc((var(--center-width) / 2));
       transform-origin: center bottom;
+      transform: rotate(var(--rotation, 0turn));
       outline: 3px solid lightblue;
     }
 
@@ -64,6 +66,7 @@ main {
       left: calc((var(--center-width) / 2) - (var(--hand-width) / 2));
       bottom: calc((var(--center-width) / 2));
       transform-origin: center bottom;
+      transform: rotate(var(--rotation, 0turn));
       outline: 3px solid lightblue;
     }
 
