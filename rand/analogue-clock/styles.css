@@ -1,144 +1,144 @@
 * {
-  box-sizing: border-box;
-  font-family: Courier, Arial;
+	box-sizing: border-box;
+	font-family: Courier, system-ui;
 }
 
 body {
-  display: flex;
-  gap: 50px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-  min-width: 600px;
+	display: flex;
+	gap: 50px;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	margin: 0;
+	min-width: 600px;
 }
 
 main {
-  background-color: lightblue;
-  width: 500px;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  border: 5px solid black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
+	background-color: lightblue;
+	width: 500px;
+	aspect-ratio: 1;
+	border-radius: 50%;
+	border: 5px solid black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
 
-  /* the reason center and pin are two different things is because I created center first, got the positioning of the hands right and then tried to put the center on top, tldr: i couldn't be bothered to redo everything so there's one more element that just 
+	/* the reason center and pin are two different things is because I created center first, got the positioning of the hands right and then tried to put the center on top, tldr: i couldn't be bothered to redo everything so there's one more element that just 
   sits on top, i.e. center = hands positioning, pin = the black circle (i.e. center if you could see it) im rambling <3 */
-  #pin {
-    z-index: 4;
-  }
+	#pin {
+		z-index: 4;
+	}
 
-  & #center {
-    position: relative;
-    --center-width: 25px;
-    width: var(--center-width);
-    aspect-ratio: 1;
-    border-radius: 50%;
+	& #center {
+		position: relative;
+		--center-width: 25px;
+		width: var(--center-width);
+		aspect-ratio: 1;
+		border-radius: 50%;
 
-    & #seconds {
-      position: absolute;
-      --hand-width: 10px;
-      width: var(--hand-width);
-      height: 220px;
-      border-radius: 10px 10px 0 0;
-      background-color: red;
-      left: calc((var(--center-width) / 2) - (var(--hand-width) / 2));
-      bottom: calc((var(--center-width) / 2));
-      transform-origin: center bottom;
-      transform: rotate(var(--rotation, 0turn));
-      outline: 3px solid lightblue;
+		& #seconds {
+			position: absolute;
+			--hand-width: 10px;
+			width: var(--hand-width);
+			height: 220px;
+			border-radius: 10px 10px 0 0;
+			background-color: red;
+			left: calc((var(--center-width) / 2) - (var(--hand-width) / 2));
+			bottom: calc((var(--center-width) / 2));
+			transform-origin: center bottom;
+			transform: rotate(var(--rotation, 0turn));
+			outline: 3px solid lightblue;
 
-      z-index: 1;
-    }
+			z-index: 1;
+		}
 
-    & #minutes {
-      position: absolute;
-      --hand-width: 15px;
-      width: var(--hand-width);
-      height: 200px;
-      border-radius: 10px 10px 0 0;
-      background-color: black;
-      left: calc((var(--center-width) / 2) - (var(--hand-width) / 2));
-      bottom: calc((var(--center-width) / 2));
-      transform-origin: center bottom;
-      transform: rotate(var(--rotation, 0turn));
-      outline: 3px solid lightblue;
-      z-index: 2;
-    }
+		& #minutes {
+			position: absolute;
+			--hand-width: 15px;
+			width: var(--hand-width);
+			height: 200px;
+			border-radius: 10px 10px 0 0;
+			background-color: black;
+			left: calc((var(--center-width) / 2) - (var(--hand-width) / 2));
+			bottom: calc((var(--center-width) / 2));
+			transform-origin: center bottom;
+			transform: rotate(var(--rotation, 0turn));
+			outline: 3px solid lightblue;
+			z-index: 2;
+		}
 
-    & #hours {
-      position: absolute;
-      --hand-width: 22px;
-      width: var(--hand-width);
-      height: 150px;
-      border-radius: 10px 10px 0 0;
-      background-color: black;
-      left: calc((var(--center-width) / 2) - (var(--hand-width) / 2));
-      bottom: calc((var(--center-width) / 2));
-      transform-origin: center bottom;
-      transform: rotate(var(--rotation, 0turn));
-      outline: 3px solid lightblue;
-      z-index: 3;
-    }
+		& #hours {
+			position: absolute;
+			--hand-width: 22px;
+			width: var(--hand-width);
+			height: 150px;
+			border-radius: 10px 10px 0 0;
+			background-color: black;
+			left: calc((var(--center-width) / 2) - (var(--hand-width) / 2));
+			bottom: calc((var(--center-width) / 2));
+			transform-origin: center bottom;
+			transform: rotate(var(--rotation, 0turn));
+			outline: 3px solid lightblue;
+			z-index: 3;
+		}
 
-    & #pin {
-      position: relative;
-      background-color: black;
-      outline: 3px solid lightblue;
-      width: var(--center-width);
-      aspect-ratio: 1;
-      border-radius: 50%;
-    }
-  }
+		& #pin {
+			position: relative;
+			background-color: black;
+			outline: 3px solid lightblue;
+			width: var(--center-width);
+			aspect-ratio: 1;
+			border-radius: 50%;
+		}
+	}
 
-  & .marker div {
-    position: absolute;
-    top: 0;
-    left: calc(50% - calc(var(--marker-width) / 2));
-    --marker-width: 7px;
-    width: var(--marker-width);
-    height: 50%;
-    aspect-ratio: 1;
-    transform-origin: bottom;
-    /* background-color: yellow; */
+	& .marker div {
+		position: absolute;
+		top: 0;
+		left: calc(50% - calc(var(--marker-width) / 2));
+		--marker-width: 7px;
+		width: var(--marker-width);
+		height: 50%;
+		aspect-ratio: 1;
+		transform-origin: bottom;
+		/* background-color: yellow; */
 
-    & .tip {
-      background-color: black;
-      transform: none;
-      height: 30px;
-      margin-top: 10px;
-      position: relative;
-      left: 0;
-      border-radius: 10px;
-    }
-  }
+		& .tip {
+			background-color: black;
+			transform: none;
+			height: 30px;
+			margin-top: 10px;
+			position: relative;
+			left: 0;
+			border-radius: 10px;
+		}
+	}
 }
 
 .marker > div {
-  transform: rotate(calc((1turn / sibling-count()) * sibling-index()));
+	transform: rotate(calc((1turn / sibling-count()) * sibling-index()));
 }
 
 form {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  font-size: 1.5rem;
-  width: 350px;
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	font-size: 1.5rem;
+	width: 350px;
 }
 
 input {
-  margin: 0;
-  font-size: inherit;
+	margin: 0;
+	font-size: inherit;
 }
 
 @supports not (
-  transform: rotate(calc((1turn / sibling-count()) * sibling-index()))
-) {
-  .marker,
-  form {
-    display: none;
-  }
+		transform: rotate(calc((1turn / sibling-count()) * sibling-index()))
+	) {
+	.marker,
+	form {
+		display: none;
+	}
 }

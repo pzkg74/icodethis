@@ -1,34 +1,36 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Clock</title>
-    <script src="./clock.js" defer></script>
-    <script src="./options.js" defer></script>
-    <link rel="stylesheet" href="./styles.css" />
-  </head>
-  <body>
-    <template id="markerTemplate">
-      <div>
-        <div class="tip"></div>
-      </div>
-    </template>
-    <main>
-      <div id="center">
-        <div id="seconds"></div>
-        <div id="minutes"></div>
-        <div id="hours"></div>
-        <div id="pin"></div>
-      </div>
-      <div class="marker"></div>
-    </main>
-    <form>
-      <div>
-        <label for="numOfMarkers">Number of markers:</label>
-        <input type="number" min="0" value="12" max="250" />
-      </div>
-      <input type="range" id="numOfMarkers" min="0" value="12" max="250" />
-    </form>
-  </body>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Clock</title>
+		<script src="./clock.js" defer></script>
+		<script src="./options.js" defer></script>
+		<link rel="stylesheet" href="./styles.css">
+	</head>
+	<body>
+		<template id="markerTemplate">
+			<div>
+				<div class="tip"></div>
+			</div>
+		</template>
+		<main>
+			<div id="center">
+				<div id="seconds"></div>
+				<div id="minutes"></div>
+				<div id="hours"></div>
+				<div id="pin"></div>
+			</div>
+			<div class="marker"></div>
+		</main>
+		<form>
+			<div>
+				<label for="numOfMarkers">Number of markers:</label>
+				<input type="number" min="0" value="12" max="250">
+			</div>
+			<input type="range" id="numOfMarkers" min="0" value="12" max="250">
+		</form>
+	</body>
 </html>
+
+<img src="" alt="">
