@@ -14,6 +14,12 @@ numOfMarkersSlider.addEventListener("input", () => {
 	setMarkers(userInput);
 });
 
+numOfMarkersNumbers.addEventListener("input", () => {
+	const userInput = numOfMarkersNumbers.value;
+	numOfMarkersSlider.value = userInput;
+	setMarkers(userInput);
+});
+
 function setMarkers(newNumOfMarkers) {
 	const currentNumOfMarkers = markerContainer.childElementCount;
 
